@@ -6,7 +6,7 @@ SmartCorners does not operate user accounts, analytics, or a telemetry backend. 
 
 ## Network requests
 
-SmartCorners may connect to a website when a user triggers a corner configured to open a URL. Its Sparkle updater may request the public update feed hosted on GitHub and download a release file when an update is chosen. Automatic update checks are subject to Sparkle's user preference. GitHub may process connection information under its own privacy policy. Apps and Shortcuts that a user chooses to launch can independently access the network; SmartCorners does not control their behavior.
+SmartCorners may connect to a website when a user triggers a corner configured to open a URL. Its Sparkle updater may request the public update feed hosted on GitHub when the user checks manually or has enabled automatic checks. Downloads and installation follow the user's Sparkle update preferences. GitHub may process connection information under its own privacy policy. Apps and Shortcuts that a user chooses to launch can independently access the network; SmartCorners does not control their behavior.
 
 ## macOS permissions and screenshots
 
