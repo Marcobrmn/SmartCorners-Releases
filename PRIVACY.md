@@ -1,21 +1,39 @@
-# SmartCorners privacy notice
+# Privacy
 
-Last updated: October 3, 2026
+Last updated: October 5, 2026.
 
-SmartCorners does not operate user accounts, analytics, or a telemetry backend. Profiles, corner assignments, language and appearance preferences, and onboarding state are stored on the user's Mac. SmartCorners does not upload that configuration.
+SmartCorners has no app accounts, analytics backend or telemetry upload. Its profiles are stored locally. For installation and distribution trust, read the [README](README.md#distribution-and-trust).
 
-## Network requests
+## Local data
 
-SmartCorners may connect to a website when a user triggers a corner configured to open a URL. Its Sparkle updater may request the public update feed hosted on GitHub when the user checks manually or has enabled automatic checks. Downloads and installation follow the user's Sparkle update preferences. GitHub may process connection information under its own privacy policy. Apps and Shortcuts that a user chooses to launch can independently access the network; SmartCorners does not control their behavior.
+`~/Library/Application Support/SmartCorners/SmartCorners.json` stores profiles, assignments, preferences, pause and onboarding state. Sparkle preferences and window state may also reside in the macOS defaults domain `app.smartcorners.SmartCorners`. Recovery copies and manually created reset backups remain on the Mac until removed. These files may contain personal website addresses, app paths and Shortcut names. SmartCorners does not upload them.
 
-## macOS permissions and screenshots
+The app reads pointer position while monitoring, discovers installed app names/icons and lists Shortcuts for configuration. It does not record typed keys. Action failures may be written to local macOS logs; errors can contain configured values or paths. Review logs before sharing them.
 
-Some actions require Accessibility permission. macOS manages those permissions. Screenshot actions use macOS screenshot shortcuts and place the result on the local clipboard; SmartCorners does not upload screenshots. Other applications may access the clipboard according to macOS permissions and their own behavior.
+## Network access
+
+Sparkle contacts the GitHub-hosted update feed for manual checks or automatic checks according to update preferences, and downloads updates when requested or permitted by those preferences. GitHub may process connection metadata under [its privacy policy](https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement). No profile upload is required.
+
+Website actions open a URL in its registered handler. Browsers, launched apps and Shortcuts may make their own network requests, store data or synchronize it. SmartCorners does not control those services.
+
+## Permissions and system changes
+
+Screenshot, Calendar and Notes actions use generated keyboard events and require Accessibility access. This grants powerful interaction capabilities; only grant it if you trust the app. SmartCorners opens the system apps and uses their shortcuts rather than directly reading their databases. A chosen Shortcut may need additional permissions.
+
+Screenshots go to the local clipboard. SmartCorners does not upload them; clipboard managers, Universal Clipboard and destination apps can process them separately. No separate capture database is maintained by SmartCorners.
+
+Launch at Login registers the app through macOS ServiceManagement only when enabled. The explicit Disable Apple Hot Corners action alters Dock corner/modifier preferences and restarts the Dock. It does not preserve a restorable history of the previous Apple corner assignments.
 
 ## Reports
 
-The report command opens a draft in the user's mail application. No report is sent by SmartCorners; the user reviews and sends any message themselves.
+Report prepares a Bug or Feature Request from your title/details and the app/macOS versions. Copy Report writes that text to the local clipboard. Open on GitHub passes it in the browser URL to GitHub as an issue draft; it may appear in browser history and connection records even before submission. Review the draft in your browser and submit it yourself using a GitHub account. Nothing is posted automatically and no configuration or logs are attached. GitHub issues in the distribution repository are public; do not include secrets or personal data. Long reports can be copied and pasted into GitHub manually. Use [the security policy](SECURITY.md) for vulnerabilities.
+
+## Removing local data
+
+Disable Launch at Login and quit every SmartCorners copy before removing the app or its local data. Moving the app to the Trash alone does not promise deletion of profiles, defaults, updater cache, backup files or permission entries.
+
+To remove saved profiles, use Finder → Go → Go to Folder to inspect `~/Library/Application Support/SmartCorners/` and delete it only after deciding whether to retain a backup. Separately review any `SmartCorners-settings-backups` directory and app preferences. macOS permissions must be reviewed in System Settings → Privacy & Security; removing files is not a guarantee of revoked grants. There is no in-app complete-cleanup function in Build 9.
 
 ## Contact
 
-For support or privacy questions, use the [public issues page](https://github.com/Marcobrmn/SmartCorners-Releases/issues). This notice will be reviewed again against the final tested release before a DMG is published.
+Use [SmartCorners Issues](https://github.com/Marcobrmn/SmartCorners-Releases/issues) for general privacy questions without publishing personal data. For sensitive concerns, request a private contact first as described in [SECURITY.md](SECURITY.md).

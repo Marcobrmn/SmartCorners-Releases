@@ -1,5 +1,8 @@
 # SmartCorners release notes
 
-**No public release yet.** The first release notes and verified DMG download will be added once the macOS app has passed the release checks. Do not use the existing development DMG as a public download.
+## 0.1.0 — Build 10
 
-Each future entry will include the app version and build, supported macOS versions and CPU architectures, feature and fix summary, known limitations, and a link to the matching GitHub Release.
+- [Release notes and validation limits](RELEASE_NOTES_0.1.0.md)
+- [Download the versioned DMG](https://github.com/Marcobrmn/SmartCorners-Releases/releases/tag/v0.1.0)
+
+See the [README](README.md) for the user guide, dependencies, permissions and roadmap.

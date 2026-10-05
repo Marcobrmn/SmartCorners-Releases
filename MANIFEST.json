@@ -1,0 +1,31 @@
+{
+  "filename": "SmartCorners-0.1.0-build.10-github-non-notarized-17435d3db15f.dmg",
+  "size_bytes": 2720079,
+  "sha256": "af969aaaf14626f16a4fa1a82b86b9578ea30d2d7e9fc2208493e24ca0680810",
+  "bundle_id": "app.smartcorners.SmartCorners",
+  "version": "0.1.0",
+  "build": "10",
+  "source_commit": "17435d3db15ffd6718e44794d8984bd1a2007010",
+  "minimum_macos": "13.0",
+  "architecture": "arm64",
+  "development_region": "en",
+  "distribution_mode": "NON-NOTARIZED GitHub",
+  "code_signature": "ad-hoc",
+  "developer_id": false,
+  "notarized": false,
+  "sparkle_ed_signature": "3ur+ggrNRBQ2zBvQmBn88bHuabIWOe0ATE108qenj4D5TPw/TJmXZ11PBQg1OEG877mMmby5QNgKk+iMFHClCA==",
+  "sparkle_embedded_public_key": "sKkmXWG6/efNK4hJJYiprpOgap2A2a9QVhbXLvqBJ2Y=",
+  "sparkle_private_update_result": "Build 10 exact archive A to B unverified; earlier Build 9 update passed and remains historical",
+  "public_release_status": "Public Build 10 release authorized and published; source remains private",
+  "recorded_limits": [
+    "Initial install, onboarding and permissions reported successful by owner; exact Gatekeeper dialogs not recorded",
+    "Clean-account first launch of final archive not documented",
+    "Full action/login/light-and-dark acceptance not comprehensively recorded",
+    "Network-failure and invalid-update tests deferred by owner",
+    "Menu-bar and light-appearance screenshots not captured",
+    "Replacement Build-10 screenshot pending owner delivery",
+    "Exact Build-10 archive private A to B not performed"
+  ],
+  "update_language_result": "Build 10 packaged-language test under German preference and negative control passed",
+  "public_release_url": "https://github.com/Marcobrmn/SmartCorners-Releases/releases/tag/v0.1.0"
+}
