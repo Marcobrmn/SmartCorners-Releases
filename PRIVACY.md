@@ -1,6 +1,6 @@
 # Privacy
 
-Last updated: October 5, 2026.
+Last updated: October 6, 2026.
 
 SmartCorners has no app accounts, analytics backend or telemetry upload. Its profiles are stored locally. For installation and distribution trust, read the [README](README.md#distribution-and-trust).
 
@@ -10,6 +10,8 @@ SmartCorners has no app accounts, analytics backend or telemetry upload. Its pro
 
 The app reads pointer position while monitoring, discovers installed app names/icons and lists Shortcuts for configuration. It does not record typed keys. Action failures may be written to local macOS logs; errors can contain configured values or paths. Review logs before sharing them.
 
+The action helper uses `~/Library/Application Support/SmartCorners-Actions/` for restricted local communication and, where present, cached public authorization. Release authorization is signed public metadata bundled with the official app; it contains code identity, not your profiles or a private key. No authorization server is required.
+
 ## Network access
 
 Sparkle contacts the GitHub-hosted update feed for manual checks or automatic checks according to update preferences, and downloads updates when requested or permitted by those preferences. GitHub may process connection metadata under [its privacy policy](https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement). No profile upload is required.
@@ -18,7 +20,7 @@ Website actions open a URL in its registered handler. Browsers, launched apps an
 
 ## Permissions and system changes
 
-Screenshot, Calendar and Notes actions use generated keyboard events and require Accessibility access. This grants powerful interaction capabilities; only grant it if you trust the app. SmartCorners opens the system apps and uses their shortcuts rather than directly reading their databases. A chosen Shortcut may need additional permissions.
+The bundled SmartCorners Actions helper performs screenshot, Calendar and Notes actions using generated keyboard events and require Accessibility access. This grants powerful interaction capabilities; only grant it if you trust the app. SmartCorners opens the system apps and uses their shortcuts rather than directly reading their databases. A chosen Shortcut may need additional permissions.
 
 Screenshots go to the local clipboard. SmartCorners does not upload them; clipboard managers, Universal Clipboard and destination apps can process them separately. No separate capture database is maintained by SmartCorners.
 
@@ -32,7 +34,7 @@ Report prepares a Bug or Feature Request from your title/details and the app/mac
 
 Disable Launch at Login and quit every SmartCorners copy before removing the app or its local data. Moving the app to the Trash alone does not promise deletion of profiles, defaults, updater cache, backup files or permission entries.
 
-To remove saved profiles, use Finder → Go → Go to Folder to inspect `~/Library/Application Support/SmartCorners/` and delete it only after deciding whether to retain a backup. Separately review any `SmartCorners-settings-backups` directory and app preferences. macOS permissions must be reviewed in System Settings → Privacy & Security; removing files is not a guarantee of revoked grants. There is no in-app complete-cleanup function in Build 9.
+To remove saved profiles, use Finder → Go → Go to Folder to inspect `~/Library/Application Support/SmartCorners/` and delete it only after deciding whether to retain a backup. Also inspect `~/Library/Application Support/SmartCorners-Actions/` after quitting the helper. Separately review any `SmartCorners-settings-backups` directory and app preferences. macOS permissions must be reviewed in System Settings → Privacy & Security; removing files is not a guarantee of revoked grants. There is no in-app complete-cleanup function in this release.
 
 ## Contact
 

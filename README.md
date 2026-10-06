@@ -2,9 +2,9 @@
 
 A free macOS menu bar app that turns screen corners into shortcuts for everyday tasks. Move the pointer into a corner, wait for the configured delay, and run its assigned action.
 
-**Release candidate:** 0.1.0 · Build 10 · Apple Silicon (M1 or later) · macOS 13 or later · English interface.
+**Current release:** 0.1.1 · Build 17 · Apple Silicon (M1 or later) · macOS 13 or later · English interface.
 
-Maintained by [Marcobrmn](https://github.com/Marcobrmn). The application source is privately held. This documentation accompanies a binary distribution; see [source availability and licensing](SOURCE_AVAILABILITY.md).
+Maintained by [Marcobrmn](https://github.com/Marcobrmn). The application source is not publicly available. This documentation accompanies a binary distribution; see [source availability and licensing](SOURCE_AVAILABILITY.md).
 
 ## Contents
 
@@ -48,7 +48,11 @@ The monitor checks corners across connected displays using the active profile. D
 
 ## Screenshot
 
-Screenshots will accompany the next public release.
+![SmartCorners Settings](screenshots/smartcorners-0.1.1-settings-dark.jpg)
+
+![Corner actions and timing](screenshots/smartcorners-0.1.1-corners-and-timing-dark.jpg)
+
+Actual screenshots of the distributed 0.1.1 app in dark appearance.
 
 ## Installation
 
@@ -79,7 +83,7 @@ Expected SHA-256: `af969aaaf14626f16a4fa1a82b86b9578ea30d2d7e9fc2208493e24ca0680
 
 1. Read the welcome screen. Choose the offered setup preferences and review permission status.
 2. Enable **Launch at Login** only if you want SmartCorners to start when you sign in. macOS may require approval in Login Items.
-3. If using screenshot, Calendar or Notes actions, use the permission button to open macOS Accessibility settings and grant access to the installed SmartCorners app.
+3. If using screenshot, Calendar or Notes actions, use the permission button to open macOS Accessibility settings and grant access to **SmartCorners Actions**, the bundled action helper. A previous grant for the main SmartCorners app does not transfer to this helper.
 4. Review any existing Apple Hot Corners. The optional **Disable Apple Hot Corners** button changes all four system corner assignments and their modifiers and restarts the Dock. Only use it if you want that system change; it is not required to store a profile.
 5. Choose **Start Using SmartCorners**, then configure corners in the main Settings window.
 
@@ -111,7 +115,7 @@ Expected SHA-256: `af969aaaf14626f16a4fa1a82b86b9578ea30d2d7e9fc2208493e24ca0680
 
 SmartCorners has no analytics backend, app account or telemetry upload. Profiles and onboarding state stay on your Mac. See [Privacy](PRIVACY.md) for storage, network access, logs and deletion details.
 
-- **Accessibility:** screenshot, Calendar and Notes actions send keyboard events. This is a powerful permission; grant it only if you trust the app. Basic corner detection reads pointer position and does not record keystrokes.
+- **Accessibility:** the bundled SmartCorners Actions helper sends keyboard events for screenshot, Calendar and Notes actions. Grant this helper once when first using it. Its grant can remain unchanged across main-app updates while the helper identity remains unchanged; replacing the helper itself may require another grant. This is a powerful permission; grant it only if you trust the app. Basic corner detection reads pointer position and does not record keystrokes.
 - **Shortcuts:** the selected shortcut may ask for its own permissions or access the network. SmartCorners does not restrict what that shortcut does.
 - **Other macOS prompts:** opened apps and workflows may require their own approvals. SmartCorners does not directly read Calendar or Notes databases.
 
@@ -121,14 +125,14 @@ Screenshots are copied to the local clipboard, not uploaded by SmartCorners. Cli
 
 Sparkle checks the GitHub-hosted update feed and installs compatible signed archives. You can check manually from the menu bar or general settings and control automatic checking in Settings.
 
-The production appcast is currently empty, so this first public release is available as a manual download. Update installation using this exact release archive has not been fully verified.
+The production appcast is currently empty, so download 0.1.1 manually from Releases. Update installation and relaunch using the exact 0.1.1 archive were exercised through a separate validation feed; that test entry is not published in the production feed.
 
-In Build 10, checking for updates dismisses SmartCorners Settings windows even when no newer version exists. The menu bar app and monitoring continue running. Installing an update closes the app and relaunches it. Avoid launching another copy during the update.
+Checking for updates dismisses SmartCorners Settings windows even when no newer version exists. The menu bar app and monitoring continue running. Installing an update closes the app and relaunches it. Avoid launching another copy during the update.
 
 ## Troubleshooting
 
 - **No corner action:** check that SmartCorners and the individual corner are enabled, verify the active profile, then wait for the configured delay. Existing Apple Hot Corners can interfere.
-- **Screenshot/Calendar/Notes action does not work:** review Accessibility access for the installed copy, click Refresh Status and quit/reopen the app if the status remains stale. These actions depend on standard macOS keyboard shortcuts and app behavior.
+- **Screenshot/Calendar/Notes action does not work:** review Accessibility access for **SmartCorners Actions**, click Refresh Status and quit/reopen the app if the status remains stale. These actions depend on standard macOS keyboard shortcuts and app behavior.
 - **No application or Shortcut in the list:** make sure it is installed or created first, then reopen Settings. SmartCorners does not install selected apps or create shortcuts.
 - **Corrupt configuration warning:** monitoring remains stopped and the original file is preserved. Review the recovery controls before choosing defaults; recovery keeps a copy of the unreadable file. Do not treat Reset Profile as corruption recovery.
 - **Already on the latest version:** verify the version/build in the menu bar and that you started the intended Applications copy. The production feed currently has no update entries; download the release manually if needed.
@@ -136,29 +140,35 @@ In Build 10, checking for updates dismisses SmartCorners Settings windows even w
 
 ## Technical details
 
-No Homebrew package, Python runtime, Node.js runtime or additional app is installed by the DMG. The app bundle includes its executable, resources and Sparkle framework/helpers. macOS supplies the system APIs and command-line tools below.
+No Homebrew package, Python runtime or Node.js runtime is installed by the DMG. The app bundle includes its executable, resources, **SmartCorners Actions.app**, and Sparkle framework/helpers. macOS supplies the system APIs and command-line tools below.
 
 | Component | Purpose | Installed by SmartCorners? |
 | --- | --- | --- |
 | Swift / SwiftUI / AppKit / Foundation | Native app, menu bar, windows and local configuration | Compiled app plus macOS system frameworks; no separate user installation. |
 | ApplicationServices / Core Graphics | Accessibility checks and generated keyboard events | System frameworks already in macOS. |
 | ServiceManagement (`SMAppService.mainApp`) | Optional launch-at-login registration | System API; registers this app when enabled, not a custom daemon. |
+| SmartCorners Actions | Fixed screenshot/Notes/Calendar actions; independently authenticated local communication | Bundled, unprivileged app; not a system daemon. Its identity stays frozen across main-app updates. |
+| Security / CryptoKit | Code identity and Ed25519 authorization checks | macOS system frameworks. |
 | Sparkle **2.10.0** | Update discovery, download, installation and relaunch | Embedded third-party framework and helpers inside the app bundle. |
 | `/usr/bin/shortcuts` | Lists/runs your named Shortcuts | macOS tool; invoked only for list/run operations. |
 | `/usr/bin/defaults`, `/usr/bin/killall Dock` | Optional disabling of Apple Hot Corners | macOS tools; used for that explicit setting change. |
 | Browser, selected apps, Notes and Calendar | Handles requested actions and reports | Existing apps are opened; none is installed by SmartCorners. |
 
-The selected Build-10 runtime uses consistent ad-hoc signing without the Hardened Runtime option, so Sparkle can load under this distribution mode. This is a packaging choice, not a claim of equivalent protection to a Developer-ID release.
+The selected runtime uses consistent ad-hoc signing without the Hardened Runtime option, so Sparkle can load under this distribution mode. This is a packaging choice, not a claim of equivalent protection to a Developer-ID release.
 
 While enabled, the app checks pointer position approximately every 40 ms and manages temporary visual overlays. It does not install a custom privileged helper, kernel extension or independent always-running monitoring service. Sparkle uses bundled **Updater.app**, **Autoupdate**, **Downloader.xpc** and **Installer.xpc** during its update workflow; they are not separate products you must install manually.
 
-Configuration: `~/Library/Application Support/SmartCorners/SmartCorners.json`. macOS defaults domain and bundle ID: `app.smartcorners.SmartCorners`. Version 0.1.0, build 10; app source commit `17435d3db15ffd6718e44794d8984bd1a2007010`. For full component and license information, see [third-party notices](THIRD_PARTY_NOTICES/Sparkle-LICENSE.txt).
+The main app verifies a signed, public authorization attached to the official app bundle as metadata. The helper independently checks the requesting app identity and authorization. No authorization server or private signing key is included or required. Use Finder to copy the app from the official DMG; third-party archive tools or filesystems may discard required metadata. If authorization is missing, reinstall from the official DMG.
+
+Settings previews animate only while hovered and the app is active. Reduce Motion pauses edge animations. Idle monitor ticks avoid publishing unchanged UI state. These changes reduce unnecessary work; battery use still depends on your configuration and usage.
+
+Configuration: `~/Library/Application Support/SmartCorners/SmartCorners.json`. macOS defaults domain and bundle ID: `app.smartcorners.SmartCorners`. Version 0.1.1, build 17; app source commit `b2114aaf131b13737af854c862ef9f6317852386`. Helper communication uses a restricted local directory at `~/Library/Application Support/SmartCorners-Actions/`. For full component and license information, see [third-party notices](THIRD_PARTY_NOTICES/Sparkle-LICENSE.txt).
 
 ## Testing and security
 
-For Build 10, Swift regression tests, 12 structure checks, release compilation, mounted-DMG inspection, bundle identity and nested signature checks, and archive signature verification passed. English updater language selection passed under a German preference. The GitHub report draft and Copy Report flow were tested in a normal interactive macOS session without submitting an issue. Comprehensive installation and update acceptance for this release remains incomplete.
+For 0.1.1, 30 Swift tests, 12 structure checks, release compilation, mounted-DMG inspection, component identities, nested ad-hoc signatures and independent Sparkle archive-signature verification passed. Packaged updater language selection passed under a German preference. Local build-machine paths were stripped before signing and checked in the final main executable. The owner confirmed the offered functions and smoother Settings scrolling.
 
-These are development and release checks, **not an independent security audit or penetration test**. No claim is made that SmartCorners is vulnerability-free. The final clean-account quarantined first launch, exact Gatekeeper dialogs, comprehensive action/login/light-and-dark acceptance and deferred update-failure cases are not all recorded as passed. See the [release notes](RELEASE_NOTES_0.1.0.md) for this candidate's evidence and limits.
+These are development and release checks, **not an independent security audit or penetration test**. No claim is made that SmartCorners is vulnerability-free. A clean-account, normally quarantined first launch, its exact Gatekeeper dialogs, comprehensive light/dark and login acceptance, and update-failure cases remain unrecorded. See [release notes](RELEASE_NOTES_0.1.1.md) for evidence and limits.
 
 Security issues and disclosure instructions are documented in [SECURITY.md](SECURITY.md).
 
@@ -166,7 +176,7 @@ Security issues and disclosure instructions are documented in [SECURITY.md](SECU
 
 The `publication-safety` GitHub Actions check runs on pull requests and pushes to `main`. It scans tracked repository files (including binary bytes) for local home/build paths and internal IPs, and reachable Git history with Gitleaks for secret patterns. A failed or incomplete check fails; branch protection must require `publication-safety` to make it a mandatory merge gate. Matches are withheld from public logs and require private human review.
 
-**Direct GitHub Release asset uploads are NOT gated by this workflow.** The published DMG is a release asset, not a tracked file; this check neither scans nor changes the existing DMG. Before any future asset upload, separately inspect the exact artifact and approve publication. This gate does not replace independent release review.
+**Release asset uploads are checked separately.** The repository workflow scans tracked files, not uploaded DMGs. Each new release archive needs its own mounted-app inspection, path check, signature verification and checksum verification. This gate does not replace release review.
 
 ## Support
 
@@ -179,4 +189,5 @@ Planned improvements; no promised release dates. Priorities may change based on 
 - [ ] Focus mode actions once the macOS integration works reliably.
 - [ ] Removal preparation: delete app settings/profiles, disable launch at login and help revoke permissions, with macOS limitations stated clearly.
 - [ ] Smoother update checks while Settings is open.
+- [ ] Continue measuring energy use during everyday operation.
 - [ ] Review language support and consider an English-only interface.

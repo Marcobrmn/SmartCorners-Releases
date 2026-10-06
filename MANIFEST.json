@@ -1,11 +1,11 @@
 {
-  "filename": "SmartCorners-0.1.0-build.10-github-non-notarized-17435d3db15f.dmg",
-  "size_bytes": 2720079,
-  "sha256": "af969aaaf14626f16a4fa1a82b86b9578ea30d2d7e9fc2208493e24ca0680810",
+  "filename": "SmartCorners-0.1.1-build.17-github-non-notarized-b2114aaf131b.dmg",
+  "size_bytes": 2772145,
+  "sha256": "413a1a40f07e40a94adae61ed63d0964001657b6ac4663b7249d5095d1a8ecf1",
   "bundle_id": "app.smartcorners.SmartCorners",
-  "version": "0.1.0",
-  "build": "10",
-  "source_commit": "17435d3db15ffd6718e44794d8984bd1a2007010",
+  "version": "0.1.1",
+  "build": "17",
+  "source_commit": "b2114aaf131b13737af854c862ef9f6317852386",
   "minimum_macos": "13.0",
   "architecture": "arm64",
   "development_region": "en",
@@ -13,20 +13,17 @@
   "code_signature": "ad-hoc",
   "developer_id": false,
   "notarized": false,
-  "sparkle_ed_signature": "3ur+ggrNRBQ2zBvQmBn88bHuabIWOe0ATE108qenj4D5TPw/TJmXZ11PBQg1OEG877mMmby5QNgKk+iMFHClCA==",
+  "sparkle_ed_signature": "ESms3iiiqGmLFtoVuj8Y6F4ESKRwrrxdlQLZ6NiF8sP24gGgdcEjU/dsWjvGsU+Ra++CWw8bDdS4sviaxFQoDw==",
   "sparkle_embedded_public_key": "sKkmXWG6/efNK4hJJYiprpOgap2A2a9QVhbXLvqBJ2Y=",
-  "public_release_status": "Public Build 10 release authorized and published; source remains private",
+  "public_release_status": "Public binary distribution; source code not publicly available",
   "recorded_limits": [
-    "Initial install, onboarding and permissions reported successful by owner; exact Gatekeeper dialogs not recorded",
-    "Clean-account first launch of final archive not documented",
-    "Full action/login/light-and-dark acceptance not comprehensively recorded",
-    "Network-failure and invalid-update tests deferred by owner",
-    "Menu-bar and light-appearance screenshots not captured",
-    "Replacement Build-10 screenshot pending owner delivery",
-    "Exact Build-10 archive update not performed",
-    "Build-10 debug symbol records retain absolute build-machine paths; correction prepared for a future build; released archive unchanged"
+    "Clean-account quarantined first launch and exact Gatekeeper dialogs not recorded",
+    "Comprehensive login/light-and-dark acceptance and update-failure cases not recorded"
   ],
-  "update_language_result": "Build 10 packaged-language test under German preference and negative control passed",
-  "public_release_url": "https://github.com/Marcobrmn/SmartCorners-Releases/releases/tag/v0.1.0",
-  "sparkle_update_validation": "Update installation using this exact release archive is unverified"
+  "update_language_result": "English updater selection under German preference and negative control passed",
+  "public_release_url": "https://github.com/Marcobrmn/SmartCorners-Releases/releases/tag/v0.1.1",
+  "sparkle_update_validation": "Exact release archive installation, automatic relaunch and immediate screenshot action confirmed in a separate validation feed; installed code, offline authorization and unchanged helper verified",
+  "actions_helper_bundle_id": "app.smartcorners.Actions",
+  "actions_helper_cdhash": "9763c60c1d133644875e639243fb60c42649ee9c",
+  "offline_authorization": "Signed public metadata bound to final app code identity; no authorization server"
 }
