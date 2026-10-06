@@ -28,11 +28,11 @@ Open the DMG in Finder and drag SmartCorners into Applications. Quit an older co
 
 Build-10 Swift tests passed: 13 XCTest cases and 8 Swift Testing regression cases, zero failures. All 12 structure checks, release compilation, English bundle language selection under a German preference (with negative control), mounted-DMG identity inspection, nested ad-hoc signature checks and final archive EdDSA verification passed. A normal interactive macOS test confirmed a correctly prefilled GitHub Feature Request draft and Copy Report; no test issue was posted.
 
-Checking for updates dismisses Settings windows even when no newer version exists; the menu bar app continues running. The earlier private update to Build 9 passed with automatic relaunch. **An A→B update using this exact Build-10 archive is unverified.** The production appcast stays empty for now; this release is available by manual download.
+Checking for updates dismisses Settings windows even when no newer version exists; the menu bar app continues running. **An A→B update using this exact Build-10 archive is unverified.** The production appcast stays empty for now; this release is available by manual download.
 
 The owner reported successful earlier installation, onboarding and permissions tests, but exact first-launch Gatekeeper dialogs were not recorded. A clean-account quarantined first launch of this final Build-10 DMG, comprehensive action/login/light-and-dark acceptance, and deferred update-failure cases are not recorded as passed. A replacement final-build screenshot is pending. These development checks are not an independent security audit, penetration test or vulnerability-free guarantee.
 
 
 ## Maintainer follow-up — October 6, 2026
 
-The current Build-10 executable retains absolute build-machine paths in debug symbol records. A packaging correction removes these records before final signing in a future build. The released DMG has not been modified or silently replaced. Current README images are clearly labeled as private Build-15 development previews, not screenshots of the public Build-10 download.
+The current Build-10 executable retains absolute build-machine paths in debug symbol records. A packaging correction removes these records before final signing in a future build. The released DMG has not been modified or silently replaced.

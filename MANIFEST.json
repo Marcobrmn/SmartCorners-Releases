@@ -15,7 +15,6 @@
   "notarized": false,
   "sparkle_ed_signature": "3ur+ggrNRBQ2zBvQmBn88bHuabIWOe0ATE108qenj4D5TPw/TJmXZ11PBQg1OEG877mMmby5QNgKk+iMFHClCA==",
   "sparkle_embedded_public_key": "sKkmXWG6/efNK4hJJYiprpOgap2A2a9QVhbXLvqBJ2Y=",
-  "sparkle_private_update_result": "Build 10 exact archive A to B unverified; earlier Build 9 update passed and remains historical",
   "public_release_status": "Public Build 10 release authorized and published; source remains private",
   "recorded_limits": [
     "Initial install, onboarding and permissions reported successful by owner; exact Gatekeeper dialogs not recorded",
@@ -24,9 +23,10 @@
     "Network-failure and invalid-update tests deferred by owner",
     "Menu-bar and light-appearance screenshots not captured",
     "Replacement Build-10 screenshot pending owner delivery",
-    "Exact Build-10 archive private A to B not performed",
+    "Exact Build-10 archive update not performed",
     "Build-10 debug symbol records retain absolute build-machine paths; correction prepared for a future build; released archive unchanged"
   ],
   "update_language_result": "Build 10 packaged-language test under German preference and negative control passed",
-  "public_release_url": "https://github.com/Marcobrmn/SmartCorners-Releases/releases/tag/v0.1.0"
+  "public_release_url": "https://github.com/Marcobrmn/SmartCorners-Releases/releases/tag/v0.1.0",
+  "sparkle_update_validation": "Update installation using this exact release archive is unverified"
 }

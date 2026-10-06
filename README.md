@@ -48,11 +48,7 @@ The monitor checks corners across connected displays using the active profile. D
 
 ## Screenshot
 
-**Development preview: private Build 15, not the public Build-10 download.** These genuine screenshots were captured from the installed English Build 15 on October 6, 2026. They show active monitoring without a permission warning. No personal information or UI content was edited into the images.
-
-![SmartCorners private Build 15: active profile and corner actions](screenshots/smartcorners-0.1.0-build-15-settings-dark.jpg)
-
-![SmartCorners private Build 15: corner actions, delay, cooldown and animation style](screenshots/smartcorners-0.1.0-build-15-corners-and-timing-dark.jpg)
+Screenshots will accompany the next public release.
 
 ## Installation
 
@@ -125,7 +121,7 @@ Screenshots are copied to the local clipboard, not uploaded by SmartCorners. Cli
 
 Sparkle checks the GitHub-hosted update feed and installs compatible signed archives. You can check manually from the menu bar or general settings and control automatic checking in Settings.
 
-The production appcast is currently empty, so this first public release is available as a manual download. A private update to Build 9 passed; a private A→B update using this exact Build-10 archive has not been performed and remains unverified. The earlier result is not claimed as a test of Build 10.
+The production appcast is currently empty, so this first public release is available as a manual download. Update installation using this exact release archive has not been fully verified.
 
 In Build 10, checking for updates dismisses SmartCorners Settings windows even when no newer version exists. The menu bar app and monitoring continue running. Installing an update closes the app and relaunches it. Avoid launching another copy during the update.
 
@@ -160,7 +156,7 @@ Configuration: `~/Library/Application Support/SmartCorners/SmartCorners.json`. m
 
 ## Testing and security
 
-For Build 10, Swift regression tests, 12 structure checks, release compilation, mounted-DMG inspection, bundle identity and nested signature checks, and archive signature verification passed. English updater language selection passed under a German preference. The GitHub report draft and Copy Report flow were tested in a normal interactive macOS session without submitting an issue. Earlier owner-reported onboarding/permission and Build-9 automatic-update results remain historical; they are not a claim of comprehensive Build-10 acceptance.
+For Build 10, Swift regression tests, 12 structure checks, release compilation, mounted-DMG inspection, bundle identity and nested signature checks, and archive signature verification passed. English updater language selection passed under a German preference. The GitHub report draft and Copy Report flow were tested in a normal interactive macOS session without submitting an issue. Comprehensive installation and update acceptance for this release remains incomplete.
 
 These are development and release checks, **not an independent security audit or penetration test**. No claim is made that SmartCorners is vulnerability-free. The final clean-account quarantined first launch, exact Gatekeeper dialogs, comprehensive action/login/light-and-dark acceptance and deferred update-failure cases are not all recorded as passed. See the [release notes](RELEASE_NOTES_0.1.0.md) for this candidate's evidence and limits.
 
