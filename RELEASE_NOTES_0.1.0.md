@@ -30,9 +30,9 @@ Build-10 Swift tests passed: 13 XCTest cases and 8 Swift Testing regression case
 
 Checking for updates dismisses Settings windows even when no newer version exists; the menu bar app continues running. **An A→B update using this exact Build-10 archive is unverified.** The production appcast stays empty for now; this release is available by manual download.
 
-The owner reported successful earlier installation, onboarding and permissions tests, but exact first-launch Gatekeeper dialogs were not recorded. A clean-account quarantined first launch of this final Build-10 DMG, comprehensive action/login/light-and-dark acceptance, and deferred update-failure cases are not recorded as passed. A replacement final-build screenshot is pending. These development checks are not an independent security audit, penetration test or vulnerability-free guarantee.
+The owner reported successful earlier installation, onboarding and permissions tests, but exact first-launch Gatekeeper dialogs were not recorded. A clean-account quarantined first launch of this final Build-10 DMG, comprehensive action/login/light-and-dark acceptance, and deferred update-failure cases are not recorded as passed. These development checks are not an independent security audit, penetration test or vulnerability-free guarantee.
 
 
 ## Maintainer follow-up — October 6, 2026
 
-The current Build-10 executable retains absolute build-machine paths in debug symbol records. A packaging correction removes these records before final signing in a future build. The released DMG has not been modified or silently replaced.
+The current Build-10 executable retains absolute build-machine paths in debug symbol records. Version 0.1.1 removes these records before final signing. The released DMG has not been modified or silently replaced.
