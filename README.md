@@ -48,7 +48,11 @@ The monitor checks corners across connected displays using the active profile. D
 
 ## Screenshot
 
-A new screenshot from Build 10 will be added after the maintainer supplies it. Earlier test screenshots are not used to represent this release.
+**Development preview: private Build 15, not the public Build-10 download.** These genuine screenshots were captured from the installed English Build 15 on October 6, 2026. They show active monitoring without a permission warning. No personal information or UI content was edited into the images.
+
+![SmartCorners private Build 15: active profile and corner actions](screenshots/smartcorners-0.1.0-build-15-settings-dark.jpg)
+
+![SmartCorners private Build 15: corner actions, delay, cooldown and animation style](screenshots/smartcorners-0.1.0-build-15-corners-and-timing-dark.jpg)
 
 ## Installation
 
