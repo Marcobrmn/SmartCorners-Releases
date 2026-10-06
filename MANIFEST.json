@@ -24,7 +24,8 @@
     "Network-failure and invalid-update tests deferred by owner",
     "Menu-bar and light-appearance screenshots not captured",
     "Replacement Build-10 screenshot pending owner delivery",
-    "Exact Build-10 archive private A to B not performed"
+    "Exact Build-10 archive private A to B not performed",
+    "Build-10 debug symbol records retain absolute build-machine paths; correction prepared for a future build; released archive unchanged"
   ],
   "update_language_result": "Build 10 packaged-language test under German preference and negative control passed",
   "public_release_url": "https://github.com/Marcobrmn/SmartCorners-Releases/releases/tag/v0.1.0"
