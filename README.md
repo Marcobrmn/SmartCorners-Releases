@@ -17,6 +17,7 @@ Maintained by [Marcobrmn](https://github.com/Marcobrmn). The application source 
 - [Troubleshooting](#troubleshooting)
 - [Technical details](#technical-details)
 - [Testing and security](#testing-and-security)
+- [Publication safety gate](#publication-safety-gate)
 - [Support](#support)
 - [Roadmap](#roadmap)
 
@@ -160,6 +161,12 @@ For Build 10, Swift regression tests, 12 structure checks, release compilation, 
 These are development and release checks, **not an independent security audit or penetration test**. No claim is made that SmartCorners is vulnerability-free. The final clean-account quarantined first launch, exact Gatekeeper dialogs, comprehensive action/login/light-and-dark acceptance and deferred update-failure cases are not all recorded as passed. See the [release notes](RELEASE_NOTES_0.1.0.md) for this candidate's evidence and limits.
 
 Security issues and disclosure instructions are documented in [SECURITY.md](SECURITY.md).
+
+## Publication safety gate
+
+The `publication-safety` GitHub Actions check runs on pull requests and pushes to `main`. It scans tracked repository files (including binary bytes) for local home/build paths and internal IPs, and reachable Git history with Gitleaks for secret patterns. A failed or incomplete check fails; branch protection must require `publication-safety` to make it a mandatory merge gate. Matches are withheld from public logs and require private human review.
+
+**Direct GitHub Release asset uploads are NOT gated by this workflow.** The published DMG is a release asset, not a tracked file; this check neither scans nor changes the existing DMG. Before any future asset upload, separately inspect the exact artifact and approve publication. This gate does not replace independent release review.
 
 ## Support
 
