@@ -1,25 +1,26 @@
 # SmartCorners 0.1.1 — Build 17
 
+Apple Silicon (M1 or later) · macOS 13 or later · English interface
+
 ## Changes
 
-- A bundled, stable SmartCorners Actions helper handles screenshot, Notes and Calendar actions. Main-app updates can preserve its Accessibility grant while its identity remains unchanged. On upgrading from an earlier version, grant **SmartCorners Actions** once; the main app's old grant does not transfer.
-- Action authorization works from signed public metadata in the official DMG without an authorization server.
-- Smoother Settings scrolling: unchanged monitor state no longer causes repeated redraws or permission checks. Preview animations run on hover while active; edge feedback respects Reduce Motion.
-- Release executables have local build-machine debug paths stripped before signing.
-- Clearer permission instructions and updated English documentation.
+- Smoother scrolling in Settings and less unnecessary background work.
+- Animation previews run on hover; corner feedback respects Reduce Motion.
+- A separate **SmartCorners Actions** helper handles screenshot, Calendar and Notes actions. Its Accessibility permission can remain in place across main-app updates when the helper is unchanged.
+- Clearer permission instructions.
 
-## Installation
+## Installing or upgrading
 
-Download this release's versioned DMG and use Finder to copy SmartCorners into Applications. Required authorization metadata is preserved by the official installation route. See [the installation guide](README.md#installation) for manual opening instructions and the security trade-off.
+Quit SmartCorners, open the new DMG in Finder and drag the app into Applications. When upgrading from 0.1.0, grant **SmartCorners Actions** Accessibility access once; the main app’s previous grant does not transfer.
 
-This build has **no Apple Developer ID signature and is not notarized**. Ad-hoc code checks and the Sparkle EdDSA archive signature do not establish Apple developer identity or Gatekeeper approval.
+This build is **not signed with an Apple Developer ID and is not notarized**. Follow the [installation guide](README.md#installation) if macOS blocks the first launch.
 
-The production update feed remains empty; this release is a manual download.
+This version is a manual download; the update feed has no published updates.
 
-## Validation and limits
+## Known limitations
 
-30 Swift tests, 12 structure checks, release compilation, English updater selection under a German preference, mounted-DMG inspection, ad-hoc component checks and independent final-archive EdDSA verification passed. The exact archive's update/relaunch result and genuine screenshots are recorded with this release. The owner confirmed the offered actions and smoother scrolling.
+- Focus mode is not available.
+- Calendar and Notes actions open blank items without predefined text.
+- Checking for updates closes Settings; the menu bar app keeps running.
 
-Clean-account first launch with normal download quarantine, exact Gatekeeper dialogs, comprehensive login/light-and-dark acceptance and update-failure cases are not fully recorded. Development testing is not an independent security audit. Performance depends on use; no battery-life guarantee is made.
-
-App identity, source revision, archive size, SHA-256 and public update signature are in [MANIFEST.json](MANIFEST.json). Source code is not publicly available.
+The download checksum is in [SHA256SUMS.txt](SHA256SUMS.txt).

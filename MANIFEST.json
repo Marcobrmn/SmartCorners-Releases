@@ -16,14 +16,7 @@
   "sparkle_ed_signature": "ESms3iiiqGmLFtoVuj8Y6F4ESKRwrrxdlQLZ6NiF8sP24gGgdcEjU/dsWjvGsU+Ra++CWw8bDdS4sviaxFQoDw==",
   "sparkle_embedded_public_key": "sKkmXWG6/efNK4hJJYiprpOgap2A2a9QVhbXLvqBJ2Y=",
   "public_release_status": "Public binary distribution; source code not publicly available",
-  "recorded_limits": [
-    "Clean-account quarantined first launch and exact Gatekeeper dialogs not recorded",
-    "Comprehensive login/light-and-dark acceptance and update-failure cases not recorded"
-  ],
-  "update_language_result": "English updater selection under German preference and negative control passed",
   "public_release_url": "https://github.com/Marcobrmn/SmartCorners-Releases/releases/tag/v0.1.1",
-  "sparkle_update_validation": "Exact release archive installation, automatic relaunch and immediate screenshot action confirmed in a separate validation feed; installed code, offline authorization and unchanged helper verified",
   "actions_helper_bundle_id": "app.smartcorners.Actions",
-  "actions_helper_cdhash": "9763c60c1d133644875e639243fb60c42649ee9c",
-  "offline_authorization": "Signed public metadata bound to final app code identity; no authorization server"
+  "actions_helper_cdhash": "9763c60c1d133644875e639243fb60c42649ee9c"
 }
