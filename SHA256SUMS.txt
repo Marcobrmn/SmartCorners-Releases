@@ -1,1 +1,2 @@
 413a1a40f07e40a94adae61ed63d0964001657b6ac4663b7249d5095d1a8ecf1  SmartCorners-0.1.1-build.17-github-non-notarized-b2114aaf131b.dmg
+413a1a40f07e40a94adae61ed63d0964001657b6ac4663b7249d5095d1a8ecf1  SmartCorners-0.1.1.dmg
