@@ -43,7 +43,7 @@ Focus mode is not available yet. Calendar and Notes actions do not insert a pred
 
 SmartCorners is **not signed with an Apple Developer ID and is not notarized**. macOS may block the first launch. Only open it if you trust the download source.
 
-1. Download the DMG from [Releases](https://github.com/Marcobrmn/SmartCorners-Releases/releases/tag/v0.1.1).
+1. Download **SmartCorners-0.1.1.dmg** from [Releases](https://github.com/Marcobrmn/SmartCorners-Releases/releases/tag/v0.1.1). The original Build 17 DMG is also available there with identical contents.
 2. Quit any older copy of SmartCorners.
 3. Open the DMG in Finder and drag **SmartCorners.app** into **Applications**.
 4. Eject the DMG and open SmartCorners from Applications.
@@ -56,7 +56,7 @@ Use Finder to copy the app from the official DMG. Other extraction tools may omi
 Compare the checksum with [SHA256SUMS.txt](SHA256SUMS.txt):
 
 ```sh
-shasum -a 256 ~/Downloads/SmartCorners-0.1.1-build.17-github-non-notarized-b2114aaf131b.dmg
+shasum -a 256 ~/Downloads/SmartCorners-0.1.1.dmg
 ```
 
 Expected SHA-256:
@@ -84,6 +84,8 @@ General settings contain **Launch at Login**, update preferences, permission che
 ## Updates
 
 Version 0.1.1 is available as a manual download. The update feed currently has no published updates. To install it, quit SmartCorners and replace the app in Applications with the copy from the new DMG.
+
+The shorter DMG name contains the same 0.1.1 Build 17 app. If you already have that version installed, you do not need to reinstall it.
 
 **Check for Updates…** is available in the menu bar and general settings. Checking closes the Settings window; SmartCorners continues running in the menu bar.
 
