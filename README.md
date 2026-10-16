@@ -8,6 +8,8 @@ Apple Silicon (M1 or later) · macOS 13 or later · English interface
 
 [Download SmartCorners](https://github.com/Marcobrmn/SmartCorners-Releases/releases/tag/v0.1.1) · [Release notes](RELEASE_NOTES.md) · [Report a problem](https://github.com/Marcobrmn/SmartCorners-Releases/issues)
 
+I liked using macOS Hot Corners, but the built-in actions and settings were too limited for what I wanted to do. So I built SmartCorners: I can choose what each corner does and adjust how it responds, without paying for another utility.
+
 ## Features
 
 - Assign an action to each of the four screen corners.
