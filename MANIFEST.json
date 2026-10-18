@@ -1,12 +1,12 @@
 {
-  "filename": "SmartCorners-0.1.1.dmg",
+  "filename": "SmartCorners-0.1.2-build.19-github-non-notarized-70aa7c5647cd.dmg",
   "legacy_filename": "SmartCorners-0.1.1-build.17-github-non-notarized-b2114aaf131b.dmg",
-  "size_bytes": 2772145,
-  "sha256": "413a1a40f07e40a94adae61ed63d0964001657b6ac4663b7249d5095d1a8ecf1",
+  "size_bytes": 2863033,
+  "sha256": "282bfdbd2707546b71e5a1940709962f7b4720419aeeef1e12d11b57906b82be",
   "bundle_id": "app.smartcorners.SmartCorners",
-  "version": "0.1.1",
-  "build": "17",
-  "source_commit": "b2114aaf131b13737af854c862ef9f6317852386",
+  "version": "0.1.2",
+  "build": "19",
+  "source_commit": "70aa7c5647cdb76118e9796895b94fbed1952c3d",
   "minimum_macos": "13.0",
   "architecture": "arm64",
   "development_region": "en",
@@ -14,10 +14,16 @@
   "code_signature": "ad-hoc",
   "developer_id": false,
   "notarized": false,
-  "sparkle_ed_signature": "ESms3iiiqGmLFtoVuj8Y6F4ESKRwrrxdlQLZ6NiF8sP24gGgdcEjU/dsWjvGsU+Ra++CWw8bDdS4sviaxFQoDw==",
+  "sparkle_ed_signature": "i0fkFiKfz4kpsmAKLMGZ3yutdZGoWm6IsgFRqlC+mw00guif32AjcQ+DV5sBkmxwPDPKfZaRZidCM/uhQyL4CQ==",
   "sparkle_embedded_public_key": "sKkmXWG6/efNK4hJJYiprpOgap2A2a9QVhbXLvqBJ2Y=",
   "public_release_status": "Public binary distribution; source code not publicly available",
-  "public_release_url": "https://github.com/Marcobrmn/SmartCorners-Releases/releases/tag/v0.1.1",
+  "public_release_url": "https://github.com/Marcobrmn/SmartCorners-Releases/releases/tag/v0.1.2",
   "actions_helper_bundle_id": "app.smartcorners.Actions",
-  "actions_helper_cdhash": "9763c60c1d133644875e639243fb60c42649ee9c"
+  "actions_helper_cdhash": "9763c60c1d133644875e639243fb60c42649ee9c",
+  "short_download_filename": "SmartCorners-0.1.2.dmg",
+  "sparkle_update_validation": "Final archive verified against the existing embedded EdDSA key; same frozen Actions helper and offline authorization format as 0.1.1.",
+  "recorded_limits": [
+    "Clean-account quarantined first launch and exact Gatekeeper dialogs not recorded",
+    "Comprehensive login/light-and-dark acceptance and network-failure recovery not recorded"
+  ]
 }
