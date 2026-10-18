@@ -3,6 +3,14 @@
   <channel>
     <title>SmartCorners Updates</title>
     <link>https://marcobrmn.github.io/SmartCorners-Releases/</link>
-    <description>No public SmartCorners release is available yet.</description>
+    <description>Signed SmartCorners updates.</description>
+    <item>
+      <title>SmartCorners 0.1.2</title>
+      <sparkle:version>18</sparkle:version>
+      <sparkle:shortVersionString>0.1.2</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>13.0</sparkle:minimumSystemVersion>
+      <description>Try corner detection in Welcome with a green confirmation. No corner action is run. Clearer corner status and permission guidance.</description>
+      <enclosure url="https://github.com/Marcobrmn/SmartCorners-Releases/releases/download/v0.1.2/SmartCorners-0.1.2.dmg" length="2844499" type="application/octet-stream" sparkle:edSignature="uLW+C3Houlq9tRDenESBJz6/riW7AlYsaCT0d/GdJUsAoX10sdwaQR7DHanHNYfnugSbk8PHhpiiKoRTNclgCw=="/>
+    </item>
   </channel>
 </rss>

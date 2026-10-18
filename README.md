@@ -2,11 +2,11 @@
 
 A free macOS menu bar app that turns screen corners into shortcuts. Move your pointer into a corner, wait for the configured delay, and run its assigned action.
 
-**Version 0.1.1 · Build 17**
+**Version 0.1.2 · Build 18**
 
 Apple Silicon (M1 or later) · macOS 13 or later · English interface
 
-[Download SmartCorners](https://github.com/Marcobrmn/SmartCorners-Releases/releases/tag/v0.1.1) · [Release notes](RELEASE_NOTES.md) · [Report a problem](https://github.com/Marcobrmn/SmartCorners-Releases/issues)
+[Download SmartCorners](https://github.com/Marcobrmn/SmartCorners-Releases/releases/tag/v0.1.2) · [Release notes](RELEASE_NOTES.md) · [Report a problem](https://github.com/Marcobrmn/SmartCorners-Releases/issues)
 
 I liked using macOS Hot Corners, but the built-in actions and settings were too limited for what I wanted to do. So I built SmartCorners: I can choose what each corner does and adjust how it responds, without paying for another utility.
 
@@ -35,6 +35,8 @@ Focus mode is not available yet. Calendar and Notes actions do not insert a pred
 
 ## Screenshots
 
+Screenshots below show version 0.1.1; 0.1.2 adds corner status and the Welcome detection test.
+
 ![SmartCorners Settings](screenshots/smartcorners-0.1.1-settings-dark.jpg)
 
 ![Corner actions and timing](screenshots/smartcorners-0.1.1-corners-and-timing-dark.jpg)
@@ -45,7 +47,7 @@ Focus mode is not available yet. Calendar and Notes actions do not insert a pred
 
 SmartCorners is **not signed with an Apple Developer ID and is not notarized**. macOS may block the first launch. Only open it if you trust the download source.
 
-1. Download **SmartCorners-0.1.1.dmg** from [Releases](https://github.com/Marcobrmn/SmartCorners-Releases/releases/tag/v0.1.1). The original Build 17 DMG is also available there with identical contents.
+1. Download **SmartCorners-0.1.2.dmg** from [Releases](https://github.com/Marcobrmn/SmartCorners-Releases/releases/tag/v0.1.2). The versioned Build 18 DMG is also available there with identical contents.
 2. Quit any older copy of SmartCorners.
 3. Open the DMG in Finder and drag **SmartCorners.app** into **Applications**.
 4. Eject the DMG and open SmartCorners from Applications.
@@ -58,18 +60,18 @@ Use Finder to copy the app from the official DMG. Other extraction tools may omi
 Compare the checksum with [SHA256SUMS.txt](SHA256SUMS.txt):
 
 ```sh
-shasum -a 256 ~/Downloads/SmartCorners-0.1.1.dmg
+shasum -a 256 ~/Downloads/SmartCorners-0.1.2.dmg
 ```
 
 Expected SHA-256:
 
 ```text
-413a1a40f07e40a94adae61ed63d0964001657b6ac4663b7249d5095d1a8ecf1
+4af82dee23e612c9684fdfb7531985e1d9fdb5879a296948fd2433bc467a2dab
 ```
 
 ## Getting started
 
-1. Complete the welcome screen.
+1. Complete the welcome screen. After allowing Accessibility and refreshing the status, choose **Try SmartCorners** and move the pointer to the top-right screen corner within 15 seconds. A green checkmark confirms detection; no action runs and no website opens. Existing users can choose **Show Welcome Again** in general settings.
 2. For screenshot, Calendar and Notes actions, grant **SmartCorners Actions** access in **System Settings → Privacy & Security → Accessibility**. An existing grant for the main SmartCorners app does not apply to this helper.
 3. Review existing Apple Hot Corners. The optional **Disable Apple Hot Corners** button clears all four macOS corner assignments and restarts the Dock. It does not restore your previous assignments later.
 4. Open **Settings** from the menu bar and select a profile.
@@ -85,9 +87,11 @@ General settings contain **Launch at Login**, update preferences, permission che
 
 ## Updates
 
-Version 0.1.1 is available as a manual download. The update feed currently has no published updates. To install it, quit SmartCorners and replace the app in Applications with the copy from the new DMG.
+Version 0.1.2 is available through the signed update feed and as a manual download. Choose **Check for Updates…** to download and install it. Your saved profiles and corner assignments are retained.
 
-The shorter DMG name contains the same 0.1.1 Build 17 app. If you already have that version installed, you do not need to reinstall it.
+The Actions helper is unchanged in this update. If your existing helper already has Accessibility access, the update is intended to retain that access; use **Refresh Status** if the displayed state is stale.
+
+For manual installation, quit SmartCorners and replace the app in Applications with the copy from the new DMG.
 
 **Check for Updates…** is available in the menu bar and general settings. Checking closes the Settings window; SmartCorners continues running in the menu bar.
 
@@ -105,7 +109,7 @@ See [Privacy](PRIVACY.md) for local files, network access and removal instructio
 - **Screenshot, Calendar or Notes actions fail:** check Accessibility access for **SmartCorners Actions**, choose **Refresh Status**, then quit and reopen SmartCorners if needed. If authorization is missing, reinstall using Finder and the official DMG.
 - **An app or Shortcut is missing:** install the app or create the Shortcut first, then reopen Settings.
 - **A configuration warning appears:** monitoring stops to protect your saved settings. Review the recovery options before choosing defaults; the unreadable file is preserved.
-- **No update is offered:** download version 0.1.1 manually from Releases.
+- **No update is offered:** check your network connection and try **Check for Updates…** again. You can also download version 0.1.2 manually from Releases.
 - **Uninstall:** disable **Launch at Login**, quit SmartCorners and move it to the Trash. To remove saved profiles and review permissions, follow [Removing local data](PRIVACY.md#removing-local-data).
 
 ## Support
