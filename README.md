@@ -2,7 +2,7 @@
 
 A free macOS menu bar app that turns screen corners into shortcuts. Move your pointer into a corner, wait for the configured delay, and run its assigned action.
 
-**Version 0.1.2 · Build 18**
+**Version 0.1.2 · Build 19**
 
 Apple Silicon (M1 or later) · macOS 13 or later · English interface
 
@@ -47,7 +47,7 @@ Screenshots below show version 0.1.1; 0.1.2 adds corner status and the Welcome d
 
 SmartCorners is **not signed with an Apple Developer ID and is not notarized**. macOS may block the first launch. Only open it if you trust the download source.
 
-1. Download **SmartCorners-0.1.2.dmg** from [Releases](https://github.com/Marcobrmn/SmartCorners-Releases/releases/tag/v0.1.2). The versioned Build 18 DMG is also available there with identical contents.
+1. Download **SmartCorners-0.1.2.dmg** from [Releases](https://github.com/Marcobrmn/SmartCorners-Releases/releases/tag/v0.1.2). The versioned Build 19 DMG is also available there with identical contents.
 2. Quit any older copy of SmartCorners.
 3. Open the DMG in Finder and drag **SmartCorners.app** into **Applications**.
 4. Eject the DMG and open SmartCorners from Applications.

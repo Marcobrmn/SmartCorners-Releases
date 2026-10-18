@@ -1,7 +1,7 @@
-# SmartCorners 0.1.2 · Build 18
+# SmartCorners 0.1.2 · Build 19
 
 - Try screen-corner detection directly in Welcome after granting Accessibility access. Move the pointer to the top-right corner to see a green success checkmark. The test runs no corner action and opens no website.
-- See clearer Active, Paused, unassigned, and permission-specific corner status.
+- See clearer Active, Paused, unassigned, and permission-specific corner status in readable badges with symbols.
 - Detection tests stop on cancellation, timeout, or closing Welcome and preserve the previous monitoring state and saved assignments.
 
 Existing users can open Settings and choose **Show Welcome Again** to try it. Your profiles and corner assignments are retained.
